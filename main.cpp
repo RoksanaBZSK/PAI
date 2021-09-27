@@ -1,36 +1,29 @@
-#include <iostream>
-#include <cmath> //doda³am bibliotekê matematyczn¹
+#include<iostream>
 using namespace std;
+
+void sortowanie_babelkowe(int tab[10],int n)
+{
+	for(int i=0;i<n;i++)
+		for(int j=1;j<n-i;j++)
+		if(tab[j-1]>tab[j])
+			swap(tab[j-1], tab[j]);
+}
 
 int main()
 {
-  cout << "Hello World!" << endl;
-  cout << "Roksana Brodawczuk nauka c++" << endl; //komentarz aoaoao
-  int numer = 5; //zmienne
-  double przecinki = 5.99;
-  char litera = 'D';
-  string tekst = "Hello";
-  bool booler = true;
-  
-  int wiek = 18; //"program" podaj¹cy wiek
-  cout << "Mam " << wiek << " lat." << endl;
-  
-  int x; //"program podaj¹cy numer"
-  cout << "Podaj numer: " << endl;
-  cin >> x;
-  cout << "Twój numer to: " << x << endl;
-  
-  int a, b;
-  int suma;
-  cout << "Podaj pierwszy numer: " << endl;
-  cin >> a;
-  cout << "Podaj drugi numer: " << endl;
-  cin >> b; suma = a + b;
-  cout << "Suma to: " << suma << endl;
-  
-  string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  cout << txt << endl;
-  cout << "D³ugoœæ tekstu to: " << txt.length() << endl;
-  
+	int *tab, n;
+	
+	cout<<"Ile liczb bêdziesz chcia³ posortowaæ? ";
+	cin>>n;
+	
+	tab = new int [n];
+	for(int i=0;i<n;i++)
+		cin>>tab[i];
+	
+	sortowanie_babelkowe(tab,n);
+	
+	for(int i=0;i<n;i++)
+          cout<<tab[i]<<" ";
+
   return 0;
 }
